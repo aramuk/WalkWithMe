@@ -1,22 +1,84 @@
 <html>
   <head>
-    <link rel="stylesheet">
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <style>
+        /* label color */
+        .input-field label {
+            color: #f5f5f5;
+        }
+
+        /* label focus color */
+        .input-field input[type=text]:focus + label {
+            color: #90caf9;
+        }
+
+        /* label underline focus color */
+        .input-field input[type=text]:focus {
+            border-bottom: 1px solid #f5f5f5;
+            box-shadow: 0 1px 0 0 #f5f5f5;
+        }
+
+        /* valid color */
+        .input-field input[type=text].valid {
+            border-bottom: 1px solid #f5f5f5;
+            box-shadow: 0 1px 0 0 #f5f5f5;
+        }
+
+        /* icon prefix focus color */
+        .input-field .prefix.active {
+            color: #90caf9;
+        }
+    </style>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!--To Connect to Server-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <h1>
-      Make A New Walk
-    </h1>
   </head>
 
-  <body>
-    <form>
-      Starting Location:
-      <input type="text" id="sLocation"></br>
-      Ending Location:
-      <input type="text" id="eLocation"></br>
-      Time:
-      <input type="text" id="time" text="00:00">
-    </form>
-    <button id="submit" onClick = "processData()">Create</button>
+  <body class="blue darken-4">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <h1 class="grey-text text-lighten-4">Make A New Walk</h1>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="section">
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">my_location</i>
+            <input id="sLocation" type="text" class="validate grey-text text-lighten-4">
+            <label for="name">Starting Location</label>
+          </div>
+
+          <div class="input-field col s12">
+            <i class="material-icons prefix">location_on</i>
+            <input id="eLocation" type="text" class="validate grey-text text-lighten-4">
+            <label for="name">Ending Location</label>
+          </div>
+
+          <div class="input-field col s12">
+            <i class="material-icons prefix">schedule</i>
+            <input id="time" type="text" placeholder="23:59" class="validate grey-text text-lighten-4">
+            <label for="name">Starting Time</label>
+          </div>
+        </div>
+        <button class="btn waves-effect waves-light blue lighten-1" id="submit"
+          onClick ="processData()" name="action">Create
+            <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <!--Verify if data is valid and send to server-->
     <script>
       function processData(){
         var a = document.getElementById('sLocation');
@@ -24,27 +86,27 @@
         var c = document.getElementById('time');
         console.log(a.value + " " + b.value + " " + c.value);
         if(verifyAddress(a)&&verifyAddress(b)&&verifyTime(c)){
-          var values = {a.value, b.value, c.value};
+          var values = [a.value, b.value, c.value];
           console.log(a.value + " " + b.value + " " + c.value);
           a.value = "";
           b.value = "";
           c.value = "";
-          /*$.post('url/walks/create', {
+          $.post('url/walks/create', {
             startLocation: a,
             endLocation: b,
             time: c
           }, function(){
             console.log('works')
-          })*/
+          })
+          window.location.href = "listWalks.html";
         }
       }
 
       function verifyAddress(element){
         if(element.value==""){
-          element.style.backgroundColor = '#ffbbaa';
+          Materialize.toast("Please Enter a Valid Address",3000);
           return false;
         }
-        element.style.backgroundColor = '#ffffff';
         return true;
       }
 
@@ -52,7 +114,7 @@
         var timeValue = obj.value;
         if(timeValue == "" || timeValue.indexOf(":")<0)
         {
-          obj.style.backgroundColor = '#ffbbaa';
+          Materialize.toast("Please Enter a Valid Time", 3000);
           return false;
         }
         else
@@ -61,7 +123,7 @@
           var sMinutes = timeValue.split(':')[1];
           if(sHours == "" || isNaN(sHours) || parseInt(sHours)>23)
           {
-            obj.style.backgroundColor = '#ffbbaa';
+            Materialize.toast("Please Enter a Valid Time", 3000);
             return false;
           }
           else if(parseInt(sHours) == 0)
@@ -70,7 +132,7 @@
             sHours = "0"+sHours;
           if(sMinutes == "" || isNaN(sMinutes) || parseInt(sMinutes)>59)
           {
-            obj.style.backgroundColor = '#ffbbaa';
+            Materialize.toast("Please Enter a Valid Time", 3000);
             return false;
           }
           else if(parseInt(sMinutes) == 0)
@@ -79,7 +141,6 @@
             sMinutes = "0"+sMinutes;
           obj.value = sHours + ":" + sMinutes;
         }
-        obj.style.backgroundColor = '#ffffff';
         return true;
       }
     </script>
