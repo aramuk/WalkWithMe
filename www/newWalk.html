@@ -91,15 +91,21 @@
           a.value = "";
           b.value = "";
           c.value = "";
-          $.post('url/walks/create', {
-            startLocation: a,
-            endLocation: b,
-            time: c
+          
+          
+          
+          $.post('http://192.168.43.12:3000/walks/create', {
+            startLocation: values[0],
+            endLocation: values[1],
+            time: values[2]
           }, function(){
             console.log('works')
-          })
+          });
+          
           window.location.href = "listWalks.html";
+          
         }
+        
       }
 
       function verifyAddress(element){
