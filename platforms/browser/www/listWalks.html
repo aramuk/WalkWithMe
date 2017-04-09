@@ -11,7 +11,7 @@
             .input-field label {
                 color: #f5f5f5;
             }
-            
+
             /* label focus color */
             .input-field input[type=text]:focus + label {
                 color: #90caf9;
@@ -19,7 +19,7 @@
             .input-field input[type=tel]:focus + label {
                 color: #90caf9;
             }
-            
+
             /* label underline focus color */
             .input-field input[type=text]:focus {
                 border-bottom: 1px solid #f5f5f5;
@@ -29,7 +29,7 @@
                 border-bottom: 1px solid #f5f5f5;
                 box-shadow: 0 1px 0 0 #f5f5f5;
             }
-            
+
             /* valid color */
             .input-field input[type=text].valid {
                 border-bottom: 1px solid #f5f5f5;
@@ -39,7 +39,7 @@
                 border-bottom: 1px solid #f5f5f5;
                 box-shadow: 0 1px 0 0 #f5f5f5;
             }
-            
+
             /* icon prefix focus color */
             .input-field .prefix.active {
                 color: #90caf9;
@@ -51,7 +51,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
 
-    <body class="blue darken-4">
+
+    <body class="blue darken-4" onload="startUp()">
         <div class="container">
             <div class="row">
                 <div class="col s12">
@@ -83,6 +84,7 @@
                 }
             </script>
             
+
             <!-- This is where all the cards that display existing walks are located -->
             <div class="section">
                 <div class="row" id="walks">
@@ -92,156 +94,77 @@
                         <div class="card blue lighten-3">
                             <div class="card-content grey-text text-lighten-5">
                                 <!-- Ending location, distance to starting location, time -->
-                                <span class="card-title">To 10155 Barbara Lane</span>
-                                <span id="asdf">0.58 miles away</span>
-                                <span>at 8:30</span>
+
+                                <span class="card-title">To 821 Bubb Road</span>
+                                <span id="asdf">.5 miles away</span>
+                                <span>at 5 pm</span>
                             </div>
-                            
-                            
-                            <div class="card-action">
-                                <button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action" onclick="sendData()" href="#modal1">Join walk
-                                    <i class="material-icons right">library_add</i>
-                                </button>
-                                <div id="modal1" class="modal">
-                                    <div class="modal-content">
-                                        <h4>Modal Header</h4>
-                                        <p>A bunch of text</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-                                    </div>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col s12 m6">
-                        <div class="card blue lighten-3">
-                            <div class="card-content grey-text text-lighten-5">
-                                <!-- Ending location, distance to starting location, time -->
-                                <span class="card-title">To 10155 Barbara Lane</span>
-                                <span id="asdf">0.58 miles away</span>
-                                <span>at 9:30</span>
-                            </div>
-                            
-                            
+
+
                             <div class="card-action">
                                 <button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action" onclick="sendData()">Join walk
                                     <i class="material-icons right">library_add</i>
                                 </button>
                             </div>
+
+
                         </div>
+
                     </div>
-                    
-                    <div class="col s12 m6">
-                        <div class="card blue lighten-3">
-                            <div class="card-content grey-text text-lighten-5">
-                                <!-- Ending location, distance to starting location, time -->
-                                <span class="card-title">To 10155 Barbara Lane</span>
-                                <span id="asdf">1.44 miles away</span>
-                                <span>at 10:30</span>
-                            </div>
-                            
-                            
-                            <div class="card-action">
-                                <button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action" onclick="sendData()">Join walk
-                                    <i class="material-icons right">library_add</i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col s12 m6">
-                        <div class="card blue lighten-3">
-                            <div class="card-content grey-text text-lighten-5">
-                                <!-- Ending location, distance to starting location, time -->
-                                <span class="card-title">To 10155 Barbara Lane</span>
-                                <span id="asdf">1.44 miles away</span>
-                                <span>at 11:30</span>
-                            </div>
-                            
-                            
-                            <div class="card-action">
-                                <button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action" onclick="sendData()">Join walk
-                                    <i class="material-icons right">library_add</i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col s12 m6">
-                        <div class="card blue lighten-3">
-                            <div class="card-content grey-text text-lighten-5">
-                                <!-- Ending location, distance to starting location, time -->
-                                <span class="card-title">To 10155 Barbara Lane</span>
-                                <span id="asdf">1.44 miles away</span>
-                                <span>at 12:30</span>
-                            </div>
-                            
-                            
-                            <div class="card-action">
-                                <button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action" onclick="sendData()">Join walk
-                                    <i class="material-icons right">library_add</i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                    
+
                 </div>
             </div>
         </div>
-        
+
         <!--Import jQuery before materialize.js-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
-       <script type="text/javascript" src="cordova.js"></script>
-        
-        <script>
-            
-            function processList(listOfWalks) {
-                Materialize.toast("inside processList()", 4000)
-                
-                document.getElementById("asdf").innerHTML = "nigger"
-                
+        <!--<script type="text/javascript" src="cordova.js"></script>-->
 
+        <script type="text/javascript">
+            function processList(listOfWalks) {
+                //Materialize.toast("inside processList()", 4000)
                 var html = ""
-                
+
                 for(x=0; x < listOfWalks.length; x++) {
-                    walk = listOfWalks[x]
-                    <!-- ON CLICK, MAKE THIS JOIN THE WALK and show a toast. need walk id and phone number, and send to the api. also, show popup with other people's info-->
-                    html += '<div class="col s12 m6"><div class="card blue lighten-3"><div class="card-content grey-text text-lighten-5"><span class="card-title">To '+walk.walk.startLocation+'</span><span>'+walk.dist+' miles away</span><span>at '+walk.walk.time+'</span></div><div class="card-action"><button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action" onclick="sendData()">Join walk<i class="material-icons right">library_add</i></button></div></div></div>'
-                    
+                    w = listOfWalks[x]
+                    //ON CLICK, MAKE THIS JOIN THE WALK and show a toast. need walk id and phone number, and send to the api. also, show popup with other people's info
+                    html += '<div class="col s12 m6"><div class="card blue lighten-3"><div class="card-content grey-text text-lighten-5"><span class="card-title">From '+ w.walk.startLocation+'</span><span class="card-title">To '+w.walk.endLocation+'</span><span>'+parseFloat(w.dist).toFixed(2)+' miles away</span><span> at '+w.walk.time+'</span></div><div class="card-action"><button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action" onclick="sendData()">Join walk<i class="material-icons right">library_add</i></button></div></div></div>'
                 }
                 var el = document.getElementById('walks')
                 el.innerHTML = html
-                //location.reload()
             }
-            
-            function startUp() {
-                
-                //Materialize.toast("test", 1000)
-                
-                $.ajax({
-                  //  url: "http://192.168.43.12:4567/walks/nearby",
-                    url: "http://localhost:3000/array",
-                    data: {location: "asdfasdf"},
-                    success: processList,
-                    dataType: "json"
-                })
-                
-                
-               // $.get("http://localhost:3000/array", {location: "asdf"}, processList)
-                
-                
-            }
-            
-            //window.onload = startUp()
-            document.addEventListener('deviceready', startUp)
-            
         </script>
-        
+        <script type="text/javascript">
+          document.addEventListener('deviceready', startUp, true);
+            function startUp() {
+              /*var myLat, myLng
+              function onSuccess(position) {
+                myLat = position.coords.latitude;
+                myLng = position.coords.longitude;
+              }
+              function onError(error) {
+                alert('code: ' + error.code + 'n' +
+                'message: ' + error.message + 'n');
+              }
+              navigator.geolocation.getCurrentPosition(onSuccess, onError);
+              //Materialize.toast("test", 1000)*/
+              $.ajax({
+                  url: "http://192.168.43.12:3000/walks/nearby",
+                  //url: "http://localhost:3000/array",
+                  data: {lat:37,lng:-122},//{lat:myLat,lng:myLng},
+                  success: processList,
+                  dataType: "json"
+              })
+
+
+           // $.get("http://localhost:3000/array", {location: "asdf"}, processList)
+
+
+        }
+
+        //window.onload = startUp()
+      </script>
+
     </body>
 </html>
-

@@ -7,19 +7,17 @@
         "files": {}
     },
     "installed_plugins": {
-
-        "cordova-plugin-compat": {
+        "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "com.phonegap.WalkWithMe"
         },
-        "cordova-plugin-geolocation": {
+        "cordova-plugin-compat": {
             "PACKAGE_NAME": "com.phonegap.WalkWithMe"
         }
     },
     "dependent_plugins": {},
     "modules": [],
     "plugin_metadata": {
-
-        "cordova-plugin-compat": "1.1.0",
-        "cordova-plugin-geolocation": "2.4.2"
+        "cordova-plugin-geolocation": "2.4.2",
+        "cordova-plugin-compat": "1.1.0"
     }
 }
