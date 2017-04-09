@@ -79,6 +79,12 @@
                         <input id="phone" type="tel" class="validate grey-text text-lighten-4">
                         <label for="phone">Phone</label>
                     </div>
+                    
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">store</i>
+                        <input id="address" type="text" class="validate grey-text text-lighten-4">
+                        <label for="address">Address</label>
+                    </div>
                 </div>
                 
                 <button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action" onclick="sendData()">Start Walking
@@ -94,8 +100,10 @@
             function sendData() {
                 var name = document.getElementById("name").value
                 var phoneNum = document.getElementById("phone").value
+                var address = document.getElementById("address").value
                 
-                //console.log(name + "" + phoneNum)
+                localStorage.phoneNum = phoneNum
+                localStorage.address = address
                 
                 $.ajax({
                   type: "POST",
@@ -105,6 +113,7 @@
                   dataType: "json"
                 })
                 
+                window.location.href = "listWalks.html?address="+address+"&phoneNum="+phoneNum
             }
             
             function callback(data, textStatus, jqXHR) {
