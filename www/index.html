@@ -81,13 +81,36 @@
                     </div>
                 </div>
                 
-                <button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action">Start Walking
+                <button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action" onclick="sendData()">Start Walking
                     <i class="material-icons right">send</i>
                 </button>
+                
+                
             </div>
         </div>
         <!--Import jQuery before materialize.js-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script>
+            function sendData() {
+                var name = document.getElementById("name").value
+                var phoneNum = document.getElementById("phone").value
+                
+                //console.log(name + "" + phoneNum)
+                
+                $.ajax({
+                  type: "POST",
+                  url: "http://192.168.130.79:4567/signup",
+                  data: { "phone":phoneNum, "name":name},
+                  success: callback,
+                  dataType: "json"
+                })
+                
+            }
+            
+            function callback(data, textStatus, jqXHR) {
+                console.log(textStatus)
+            }
+        </script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
     </body>
 </html>
