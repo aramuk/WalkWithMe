@@ -58,13 +58,30 @@
                     <h1 class="grey-text text-lighten-4">Select a Walk</h1>
                 </div>
                 
-                <div class="col s12">
+                <div class="col s9">
                     <h5 class="grey-text text-lighten-4">Click a walk to join.</h4>
+                </div>
+                
+                <script>
+                    function createWalk() {
+                        <!-- INSERT CODE TO GO TO CREATE WALK PAGE -->
+                    }
+                </script>
+                
+                <div class="col s3">
+                    <a class="btn-floating btn-large waves-effect waves-light blue" onclick="createWalk()"><i class="material-icons">add</i></a>
                 </div>
                 
             </div>
             
             <div class="divider"></div>
+            
+            <script>
+                function sendData(){
+                    Materialize.toast("Walk joined!", 3000)
+                    $('#modal1').modal('open')
+                }
+            </script>
             
             <!-- This is where all the cards that display existing walks are located -->
             <div class="section">
@@ -75,9 +92,36 @@
                         <div class="card blue lighten-3">
                             <div class="card-content grey-text text-lighten-5">
                                 <!-- Ending location, distance to starting location, time -->
-                                <span class="card-title">To 821 Bubb Road</span>
-                                <span id="asdf">.5 miles away</span>
-                                <span>at 5 pm</span>
+                                <span class="card-title">To 10155 Barbara Lane</span>
+                                <span id="asdf">0.58 miles away</span>
+                                <span>at 8:30</span>
+                            </div>
+                            
+                            
+                            <div class="card-action">
+                                <button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action" onclick="sendData()" href="#modal1">Join walk
+                                    <i class="material-icons right">library_add</i>
+                                </button>
+                                <div id="modal1" class="modal">
+                                    <div class="modal-content">
+                                        <h4>Modal Header</h4>
+                                        <p>A bunch of text</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                                    </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col s12 m6">
+                        <div class="card blue lighten-3">
+                            <div class="card-content grey-text text-lighten-5">
+                                <!-- Ending location, distance to starting location, time -->
+                                <span class="card-title">To 10155 Barbara Lane</span>
+                                <span id="asdf">0.58 miles away</span>
+                                <span>at 9:30</span>
                             </div>
                             
                             
@@ -93,9 +137,9 @@
                         <div class="card blue lighten-3">
                             <div class="card-content grey-text text-lighten-5">
                                 <!-- Ending location, distance to starting location, time -->
-                                <span class="card-title">To 821 Bubb Road</span>
-                                <span id="asdf">.5 miles away</span>
-                                <span>at 5 pm</span>
+                                <span class="card-title">To 10155 Barbara Lane</span>
+                                <span id="asdf">1.44 miles away</span>
+                                <span>at 10:30</span>
                             </div>
                             
                             
@@ -111,9 +155,9 @@
                         <div class="card blue lighten-3">
                             <div class="card-content grey-text text-lighten-5">
                                 <!-- Ending location, distance to starting location, time -->
-                                <span class="card-title">To 821 Bubb Road</span>
-                                <span id="asdf">.5 miles away</span>
-                                <span>at 5 pm</span>
+                                <span class="card-title">To 10155 Barbara Lane</span>
+                                <span id="asdf">1.44 miles away</span>
+                                <span>at 11:30</span>
                             </div>
                             
                             
@@ -129,27 +173,9 @@
                         <div class="card blue lighten-3">
                             <div class="card-content grey-text text-lighten-5">
                                 <!-- Ending location, distance to starting location, time -->
-                                <span class="card-title">To 821 Bubb Road</span>
-                                <span id="asdf">.5 miles away</span>
-                                <span>at 5 pm</span>
-                            </div>
-                            
-                            
-                            <div class="card-action">
-                                <button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action" onclick="sendData()">Join walk
-                                    <i class="material-icons right">library_add</i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col s12 m6">
-                        <div class="card blue lighten-3">
-                            <div class="card-content grey-text text-lighten-5">
-                                <!-- Ending location, distance to starting location, time -->
-                                <span class="card-title">To 821 Bubb Road</span>
-                                <span id="asdf">.5 miles away</span>
-                                <span>at 5 pm</span>
+                                <span class="card-title">To 10155 Barbara Lane</span>
+                                <span id="asdf">1.44 miles away</span>
+                                <span>at 12:30</span>
                             </div>
                             
                             
