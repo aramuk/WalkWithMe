@@ -6,12 +6,14 @@
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <meta name="google-signin-client_id" content="445768536710-6jj9tn18eno3bjlr94a9a8pmj0s5i01r.apps.googleusercontent.com">
         <style>
             /* label color */
             .input-field label {
                 color: #f5f5f5;
             }
-            
+
             /* label focus color */
             .input-field input[type=text]:focus + label {
                 color: #90caf9;
@@ -19,7 +21,7 @@
             .input-field input[type=tel]:focus + label {
                 color: #90caf9;
             }
-            
+
             /* label underline focus color */
             .input-field input[type=text]:focus {
                 border-bottom: 1px solid #f5f5f5;
@@ -29,7 +31,7 @@
                 border-bottom: 1px solid #f5f5f5;
                 box-shadow: 0 1px 0 0 #f5f5f5;
             }
-            
+
             /* valid color */
             .input-field input[type=text].valid {
                 border-bottom: 1px solid #f5f5f5;
@@ -39,7 +41,7 @@
                 border-bottom: 1px solid #f5f5f5;
                 box-shadow: 0 1px 0 0 #f5f5f5;
             }
-            
+
             /* icon prefix focus color */
             .input-field .prefix.active {
                 color: #90caf9;
@@ -57,15 +59,15 @@
                 <div class="col s12">
                     <h1 class="grey-text text-lighten-4">WalkWithMe</h1>
                 </div>
-                
+
                 <div class="col s12">
                     <h5 class="grey-text text-lighten-4">Sign up to find people to walk places with!</h4>
                 </div>
-                
+
             </div>
-            
+
             <div class="divider"></div>
-            
+
             <div class="section">
                 <div class="row">
                     <div class="input-field col s12">
@@ -73,19 +75,19 @@
                         <input id="name" type="text" class="validate grey-text text-lighten-4">
                         <label for="name">Name</label>
                     </div>
-                    
+
                     <div class="input-field col s12">
-                        <i class="material-icons prefix">phone</i>
+                        <!--<i class="material-icons prefix">phone</i>
                         <input id="phone" type="tel" class="validate grey-text text-lighten-4">
-                        <label for="phone">Phone</label>
+                        <label for="phone">Phone</label>-->
                     </div>
-                    
-                
+
+
                 <button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action" onclick="sendData()">Start Walking
                     <i class="material-icons right">send</i>
                 </button>
-                
-                
+
+
             </div>
         </div>
         <!--Import jQuery before materialize.js-->
@@ -94,9 +96,9 @@
             function sendData() {
                 var name = document.getElementById("name").value
                 var phoneNum = document.getElementById("phone").value
-                
+
                 localStorage.phoneNum = phoneNum
-                
+
                 $.ajax({
                   type: "POST",
                   url: "http://192.168.130.79:4567/signup",
@@ -104,10 +106,10 @@
                   success: callback,
                   dataType: "json"
                 })
-                
+
                 window.location.href = "listWalks.html"
             }
-            
+
             function callback(data, textStatus, jqXHR) {
                 console.log(textStatus)
             }
